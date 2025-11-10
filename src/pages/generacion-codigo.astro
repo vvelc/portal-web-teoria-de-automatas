@@ -1,17 +1,33 @@
 ---
 import Layout from "../components/Layout.astro";
-import Nav from "../components/Nav.astro";
 ---
 
 <Layout title="Generación de código intermedio y final">
-  <Fragment slot="nav"><Nav/></Fragment>
   <section class="card">
     <h2>Código intermedio</h2>
-    <!-- Contenido irá aquí -->
+    <p>
+      El código intermedio es una representación del programa que no depende de una arquitectura específica 
+      del procesador. Su función es servir como puente entre el análisis del código y la generación final. 
+      Este formato permite que un mismo compilador pueda adaptarse fácilmente a diferentes máquinas.
+    </p>
+    <p>
+      Un ejemplo común de código intermedio son las expresiones en <em>Three Address Code (TAC)</em> 
+      o el lenguaje bytecode, utilizado por la máquina virtual de Java (JVM).
+    </p>
   </section>
   <section class="card">
     <h2>Código final</h2>
-    <!-- Contenido irá aquí -->
+    <p>
+      El código final es la traducción del programa al lenguaje máquina específico del procesador. 
+      En esta fase, se asignan direcciones de memoria, registros y se enlazan librerías externas. 
+      El resultado suele ser un archivo ejecutable (.exe, .out, etc.) que puede correr directamente 
+      en el sistema operativo destino.
+    </p>
+    <p>
+      En resumen, la generación de código intermedio aporta portabilidad, 
+      mientras que la generación de código final garantiza la ejecución eficiente 
+      en el hardware específico.
+    </p>
   </section>
 </Layout>
 

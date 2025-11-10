@@ -1,13 +1,23 @@
 ---
 import Layout from "../components/Layout.astro";
-import Nav from "../components/Nav.astro";
 ---
 
 <Layout title="Compiladores empleados en la actualidad">
-  <Fragment slot="nav"><Nav/></Fragment>
   <section class="card">
-    <h2>Compiladores populares</h2>
-    <!-- Contenido irá aquí -->
+    <h2>Compiladores populares y su uso actual</h2>
+    <ul>
+      <li><strong>GCC (GNU Compiler Collection):</strong> soporta C, C++, Objective-C y otros lenguajes. Es ampliamente usado en sistemas Linux.</li>
+      <li><strong>Clang:</strong> compilador moderno del proyecto LLVM, rápido y con gran capacidad de diagnóstico de errores.</li>
+      <li><strong>Javac:</strong> traduce el código Java a bytecode que se ejecuta en la JVM, garantizando portabilidad entre plataformas.</li>
+      <li><strong>Python (CPython):</strong> interpreta y compila a bytecode internamente, combinando compilación y ejecución dinámica.</li>
+      <li><strong>Swift Compiler:</strong> empleado por Apple, genera código optimizado para sistemas iOS y macOS.</li>
+      <li><strong>Kotlin Compiler:</strong> traduce código Kotlin a bytecode de JVM o a JavaScript para aplicaciones multiplataforma.</li>
+    </ul>
+    <p>
+      Estos compiladores representan la evolución de la teoría en aplicaciones reales, 
+      demostrando cómo los principios de optimización y análisis se aplican en herramientas modernas 
+      de desarrollo.
+    </p>
   </section>
 </Layout>
 

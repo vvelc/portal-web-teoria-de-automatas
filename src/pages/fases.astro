@@ -1,15 +1,28 @@
 ---
 import Layout from "../components/Layout.astro";
-import Nav from "../components/Nav.astro";
 ---
 
 <Layout title="Fases del proceso de compilación">
-  <Fragment slot="nav"><Nav/></Fragment>
   <section class="card">
-    <h2>Fases</h2>
-    <!-- Inserta imagen/SVG del diagrama Mermaid exportado -->
-    <!-- <img src="/fases.svg" alt="Fases de compilacion" /> -->
-    <!-- Contenido resumen irá aquí -->
+    <h2>Fases del proceso de compilación</h2>
+    <p>
+      El proceso de compilación se compone de varias fases que transforman el código fuente en un programa ejecutable. 
+      Cada fase realiza una tarea específica y prepara el código para la siguiente.
+    </p>
+    <ol>
+      <li><strong>Análisis léxico:</strong> convierte el texto en tokens o componentes básicos del lenguaje.</li>
+      <li><strong>Análisis sintáctico:</strong> verifica que las instrucciones sigan la estructura gramatical del lenguaje.</li>
+      <li><strong>Análisis semántico:</strong> evalúa el significado de las sentencias y detecta inconsistencias lógicas.</li>
+      <li><strong>Optimización:</strong> mejora el código para hacerlo más rápido y eficiente.</li>
+      <li><strong>Generación de código intermedio:</strong> crea una versión abstracta del programa.</li>
+      <li><strong>Generación de código final:</strong> traduce el código a lenguaje máquina.</li>
+      <li><strong>Enlazado:</strong> une el código con librerías externas para producir el ejecutable final.</li>
+    </ol>
+    <p>
+      Este proceso puede visualizarse como una cadena secuencial donde cada fase depende 
+      del resultado correcto de la anterior.
+    </p>
+    <img src="/portal-web-teoria-de-automatas/fases.png" alt="Fases del proceso de compilación" style="max-width:100%;border-radius:8px;" />
   </section>
 </Layout>
 

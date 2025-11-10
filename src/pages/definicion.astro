@@ -1,17 +1,35 @@
 ---
 import Layout from "../components/Layout.astro";
-import Nav from "../components/Nav.astro";
 ---
 
 <Layout title="Definición de compilador y relación con autómatas">
-  <Fragment slot="nav"><Nav/></Fragment>
   <section class="card">
     <h2>¿Qué es un compilador?</h2>
-    <!-- Contenido irá aquí -->
+    <p>
+      Un compilador es un programa que traduce el código fuente escrito en un lenguaje de alto nivel 
+      (como C, Java o Python) a un lenguaje de bajo nivel o lenguaje máquina, que puede ser entendido 
+      directamente por la computadora. Su propósito principal es transformar instrucciones humanas 
+      en un conjunto de instrucciones ejecutables optimizadas y correctas.
+    </p>
+    <p>
+      Además de traducir, el compilador analiza el código para detectar errores de sintaxis y semántica, 
+      optimiza su rendimiento y genera un archivo ejecutable o intermedio. 
+      Este proceso garantiza que el programa sea funcional, eficiente y portable.
+    </p>
   </section>
   <section class="card">
-    <h3>Vínculo con Teoría de Autómatas y Lenguajes Formales</h3>
-    <!-- Contenido irá aquí -->
+    <h3>Relación con la Teoría de Autómatas y Lenguajes Formales</h3>
+    <p>
+      La Teoría de Compiladores está directamente vinculada con la Teoría de Autómatas y los Lenguajes Formales, 
+      ya que los compiladores utilizan modelos matemáticos, como autómatas finitos y gramáticas, 
+      para analizar la estructura del código fuente.
+    </p>
+    <p>
+      Por ejemplo, el <strong>análisis léxico</strong> emplea autómatas finitos para reconocer los tokens del lenguaje, 
+      mientras que el <strong>análisis sintáctico</strong> usa gramáticas libres de contexto para verificar la estructura 
+      de las instrucciones. Gracias a estos fundamentos, los compiladores pueden interpretar correctamente 
+      la lógica del lenguaje de programación.
+    </p>
   </section>
 </Layout>
 

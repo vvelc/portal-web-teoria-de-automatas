@@ -1,4 +1,5 @@
 ---
+import Nav from "./Nav.astro";
 const { title = 'Portal: Teoría de Compiladores' } = Astro.props;
 ---
 
@@ -7,27 +8,264 @@ const { title = 'Portal: Teoría de Compiladores' } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <link rel="icon" href="/favicon.svg" />
+    <link rel="icon" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
-      :root { --bg:#0b1020; --card:#121a33; --muted:#cad3f5; --accent:#7aa2f7; }
-      body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:var(--muted); }
-      header, main, footer { max-width: 980px; margin: auto; padding: 1.25rem; }
-      a { color: var(--accent); text-decoration: none; }
-      .card { background: var(--card); border-radius: 16px; padding: 1rem 1.25rem; box-shadow: 0 6px 24px rgba(0,0,0,.25); }
-      .grid { display:grid; gap:1rem; }
+      /* Estilo Académico Profesional */
+      :root {
+        --bg: #e8eaed;
+        --page-bg: #ffffff;
+        --card: #ffffff;
+        --muted: #495057;
+        --accent: #0033a1;
+        --accent-light: #0066cc;
+        --heading-font: 'Crimson Text', Georgia, serif;
+        --body-font: 'Inter', system-ui, -apple-system, sans-serif;
+        --border: #d1d5db;
+        --shadow: rgba(0, 0, 0, 0.1);
+        --header-bg: #003087;
+      }
+      
+      * {
+        box-sizing: border-box;
+      }
+      
+      body {
+        margin: 0;
+        font-family: var(--body-font);
+        background: var(--bg);
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 16px;
+        padding: 0;
+      }
+      
+      /* Contenedor tipo hoja */
+      .page-wrapper {
+        max-width: 1200px;
+        margin: 2rem auto;
+        background: var(--page-bg);
+        box-shadow: 0 4px 24px var(--shadow);
+        min-height: calc(100vh - 4rem);
+      }
+      
+      /* Header con logo */
+      header {
+        background: linear-gradient(135deg, var(--header-bg) 0%, #0052a3 100%);
+        color: white;
+        padding: 2rem 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 4px solid var(--accent);
+        border-radius: 12px 12px 0 0;
+      }
+      
+      header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        font-family: 'Poppins', 'Inter', sans-serif;
+        font-weight: 700;
+        color: white;
+        border: none;
+        padding: 0;
+        flex: 1;
+        letter-spacing: -0.5px;
+      }
+      
+      .header-logo {
+        display: flex;
+        align-items: center;
+        background: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+      
+      .header-logo img {
+        height: 50px;
+        width: auto;
+      }
+      
+      /* Contenido principal */
+      main {
+        padding: 3rem;
+        max-width: 100%;
+      }
+      
+      .grid {
+        display: grid;
+        gap: 2rem;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--heading-font);
+        color: #1a1a1a;
+        font-weight: 600;
+        margin-top: 2em;
+        margin-bottom: 0.75em;
+        line-height: 1.3;
+      }
+      
+      h2 {
+        font-size: 2rem;
+        margin-top: 1.5em;
+        color: var(--accent);
+        border-bottom: 2px solid var(--border);
+        padding-bottom: 0.5rem;
+      }
+      
+      h3 {
+        font-size: 1.5rem;
+        color: var(--accent-light);
+      }
+      
+      a {
+        color: var(--accent-light);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      
+      a:hover {
+        color: var(--accent);
+        text-decoration: underline;
+      }
+      
+      /* Cards mejoradas */
+      .card {
+        background: var(--card);
+        border-radius: 8px;
+        padding: 2.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        border: 1px solid var(--border);
+        margin-bottom: 2rem;
+        transition: box-shadow 0.2s ease;
+      }
+      
+      .card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      }
+      
+      .card h2:first-child {
+        margin-top: 0;
+      }
+      
+      /* Footer */
+      footer {
+        padding: 2rem 3rem;
+        border-top: 1px solid var(--border);
+        background: #f8f9fa;
+      }
+      
+      .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+      }
+      
+      .logo-container img {
+        max-height: 60px;
+        width: auto;
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+      }
+      
+      .logo-container img:hover {
+        opacity: 1;
+      }
+      
+      /* Listas */
+      ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        margin: 1rem 0;
+      }
+      
+      li {
+        margin: 0.75rem 0;
+        line-height: 1.6;
+      }
+      
+      strong {
+        color: #1a1a1a;
+        font-weight: 600;
+      }
+      
+      p {
+        margin: 1rem 0;
+        text-align: justify;
+      }
+      
+      /* Responsive */
+      @media (max-width: 968px) {
+        .page-wrapper {
+          margin: 0;
+          box-shadow: none;
+        }
+        
+        header {
+          flex-direction: column;
+          gap: 1.5rem;
+          padding: 1.5rem;
+          text-align: center;
+        }
+        
+        header h1 {
+          font-size: 2rem;
+        }
+        
+        main {
+          padding: 2rem 1.5rem;
+        }
+        
+        .card {
+          padding: 1.5rem;
+        }
+        
+        nav a {
+          padding: 0.75rem 1rem;
+          font-size: 0.9rem;
+        }
+        
+        footer {
+          padding: 1.5rem;
+        }
+      }
+      
+      @media (max-width: 640px) {
+        nav {
+          flex-direction: column;
+        }
+        
+        nav a {
+          width: 100%;
+          text-align: center;
+          border-bottom: 1px solid var(--border);
+        }
+      }
     </style>
   </head>
   <body>
-    <header class="grid">
-      <h1>Teoría de Compiladores</h1>
-      <slot name="nav" />
-    </header>
-    <main class="grid">
-      <slot />
-    </main>
-    <footer class="grid">
-      <small>UNIBE · {new Date().getFullYear()}</small>
-    </footer>
+    <div class="page-wrapper">
+      <header>
+        <h1>Teoría de Compiladores</h1>
+        <div class="header-logo">
+          <img src={`${import.meta.env.BASE_URL}/unibe-logo.svg`} alt="Logo UNIBE" />
+        </div>
+      </header>
+      <Nav />
+      <main class="grid">
+        <slot />
+      </main>
+      <footer>
+        <div class="logo-container">
+          <img src={`${import.meta.env.BASE_URL}/unibe-logo.svg`} alt="Logo UNIBE" loading="lazy" />
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
 

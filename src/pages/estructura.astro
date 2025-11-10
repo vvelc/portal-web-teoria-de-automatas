@@ -1,13 +1,27 @@
 ---
 import Layout from "../components/Layout.astro";
-import Nav from "../components/Nav.astro";
 ---
 
 <Layout title="Estructura de un compilador">
-  <Fragment slot="nav"><Nav/></Fragment>
   <section class="card">
-    <h2>Módulos principales</h2>
-    <!-- Contenido irá aquí -->
+    <h2>Estructura general de un compilador</h2>
+    <p>
+      Un compilador está formado por varias fases organizadas en dos grandes etapas: 
+      el <strong>análisis</strong> y la <strong>síntesis</strong>.
+    </p>
+    <ul>
+      <li><strong>Análisis léxico (Scanner):</strong> divide el código fuente en tokens o componentes básicos.</li>
+      <li><strong>Análisis sintáctico (Parser):</strong> verifica que la estructura de las sentencias sea correcta según la gramática del lenguaje.</li>
+      <li><strong>Análisis semántico:</strong> valida el significado de las instrucciones, tipos de datos y coherencia lógica.</li>
+      <li><strong>Generación de código intermedio:</strong> crea una representación simplificada del programa para facilitar la optimización.</li>
+      <li><strong>Optimización:</strong> mejora el código intermedio para hacerlo más eficiente sin alterar su funcionalidad.</li>
+      <li><strong>Generación de código final:</strong> traduce el resultado a lenguaje máquina o ensamblador.</li>
+      <li><strong>Enlazado (Linking):</strong> une el código generado con librerías externas para producir el ejecutable final.</li>
+    </ul>
+    <p>
+      Estas fases permiten que el compilador transforme progresivamente un código fuente en un programa funcional, 
+      manteniendo la corrección y la eficiencia durante todo el proceso.
+    </p>
   </section>
 </Layout>
 

@@ -1,10 +1,102 @@
-<nav class="card" aria-label="Secciones del portal">
-  <a href="/">Portada</a> ·
-  <a href="/definicion">Compilador y teoría</a> ·
-  <a href="/estructura">Estructura</a> ·
-  <a href="/generacion-codigo">Generación de código</a> ·
-  <a href="/fases">Fases</a> ·
-  <a href="/compiladores-actuales">Compiladores actuales</a> ·
-  <a href="/referencias">Referencias</a>
+<nav class="modern-nav" aria-label="Secciones del portal">
+  <a href="/portal-web-teoria-de-automatas/" class="nav-link">
+    <span class="nav-icon">🏠</span>
+    <span>Portada</span>
+  </a>
+  <a href="/portal-web-teoria-de-automatas/definicion" class="nav-link">
+    <span class="nav-icon">📖</span>
+    <span>Definición</span>
+  </a>
+  <a href="/portal-web-teoria-de-automatas/estructura" class="nav-link">
+    <span class="nav-icon">🏗️</span>
+    <span>Estructura</span>
+  </a>
+  <a href="/portal-web-teoria-de-automatas/generacion-codigo" class="nav-link">
+    <span class="nav-icon">⚙️</span>
+    <span>Generación</span>
+  </a>
+  <a href="/portal-web-teoria-de-automatas/fases" class="nav-link">
+    <span class="nav-icon">🔄</span>
+    <span>Fases</span>
+  </a>
+  <a href="/portal-web-teoria-de-automatas/compiladores-actuales" class="nav-link">
+    <span class="nav-icon">💻</span>
+    <span>Actuales</span>
+  </a>
+  <a href="/portal-web-teoria-de-automatas/referencias" class="nav-link">
+    <span class="nav-icon">📚</span>
+    <span>Referencias</span>
+  </a>
 </nav>
+
+<style>
+  /* Navegación moderna */
+  .modern-nav {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-bottom: 2px solid #e5e7eb;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+  }
+  
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: white;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    color: #4b5563;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    color: #0033a1;
+    border-color: #0033a1;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 51, 161, 0.15);
+  }
+  
+  .nav-link:active {
+    transform: translateY(-1px);
+  }
+  
+  .nav-icon {
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-link:hover .nav-icon {
+    transform: scale(1.2) rotate(5deg);
+  }
+  
+  @media (max-width: 640px) {
+    .modern-nav {
+      flex-direction: column;
+      padding: 0.5rem;
+    }
+    
+    .nav-link {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
 
