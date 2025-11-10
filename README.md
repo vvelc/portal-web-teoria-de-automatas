@@ -1,5 +1,7 @@
 # Astro Starter Kit: Minimal
 
+[https://vvelc.github.io/portal-web-teoria-de-automatas/](https://vvelc.github.io/portal-web-teoria-de-automatas/)
+
 ```sh
 pnpm create astro@latest -- --template minimal
 ```
